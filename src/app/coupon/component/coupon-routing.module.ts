@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
+import { CouponComponent } from './coupon.component'
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./coupon/component/coupon.module').then((m) => m.CouponModule),
+    component: CouponComponent,
   },
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class CouponRoutingModule {}
